@@ -18,20 +18,20 @@ The models were evaluated using Accuracy, AUC, Precision, Recall, F1 Score, and 
 
 ## Dataset
 
-The dataset used for this project is the Default of Credit Card Clients dataset.
+The dataset used for this project is the **Default of Credit Card Clients** dataset.
 
 The dataset contains 30,000 records and 23 input features used for prediction.
 
 The target variable is:
 
-- `default` — indicates whether the client defaulted on payment next month.
+* `default` — indicates whether the client defaulted on payment next month.
 
 The dataset contains information related to credit limit, demographic information, repayment status, bill amounts, and previous payment amounts.
 
 The data was divided into:
 
-- Training data: 24,000 records
-- Testing data: 6,000 records
+* Training data: 24,000 records
+* Testing data: 6,000 records
 
 The training/testing split used was 80/20.
 
@@ -63,13 +63,13 @@ Random Forest was used as an ensemble classification model consisting of multipl
 
 ## Model Comparison
 
-| ML Model | Accuracy | AUC | Precision | Recall | F1 Score | MCC |
-|---|---:|---:|---:|---:|---:|---:|
-| Logistic Regression | 0.8077 | 0.7076 | 0.6868 | 0.2396 | 0.3553 | 0.3244 |
-| Decision Tree | 0.7145 | 0.6075 | 0.3694 | 0.4115 | 0.3893 | 0.2042 |
-| kNN | 0.7928 | 0.7014 | 0.5487 | 0.3564 | 0.4322 | 0.3233 |
-| Naive Bayes | 0.7525 | 0.7249 | 0.4515 | 0.5539 | 0.4975 | 0.3386 |
-| Random Forest | 0.8120 | 0.7506 | 0.6325 | 0.3580 | 0.4572 | 0.3749 |
+| ML Model            | Accuracy |    AUC | Precision | Recall | F1 Score |    MCC |
+| ------------------- | -------: | -----: | --------: | -----: | -------: | -----: |
+| Logistic Regression |   0.8077 | 0.7076 |    0.6868 | 0.2396 |   0.3553 | 0.3244 |
+| Decision Tree       |   0.7145 | 0.6075 |    0.3694 | 0.4115 |   0.3893 | 0.2042 |
+| kNN                 |   0.7928 | 0.7015 |    0.5487 | 0.3564 |   0.4322 | 0.3233 |
+| Naive Bayes         |   0.7525 | 0.7249 |    0.4515 | 0.5539 |   0.4975 | 0.3386 |
+| Random Forest       |   0.8120 | 0.7506 |    0.6325 | 0.3580 |   0.4572 | 0.3749 |
 
 ---
 
@@ -81,11 +81,11 @@ Logistic Regression achieved an accuracy of 0.8077 and an AUC of 0.7076. It achi
 
 ### Decision Tree
 
-Decision Tree achieved an accuracy of 0.7145 and an AUC of 0.6075. It had lower overall performance compared with the other models.
+Decision Tree achieved an accuracy of 0.7145 and an AUC of 0.6075. It had lower overall performance compared with the other models, although it achieved a recall of 0.4115.
 
 ### kNN
 
-kNN achieved an accuracy of 0.7928 and an AUC of 0.7014. Its F1 Score was 0.4322, providing balanced performance compared with Decision Tree.
+kNN achieved an accuracy of 0.7928 and an AUC of 0.7015. Its F1 Score was 0.4322, providing better overall performance than the Decision Tree.
 
 ### Naive Bayes
 
@@ -99,18 +99,20 @@ Random Forest achieved the highest accuracy of 0.8120 and an AUC of 0.7506. It a
 
 ## Overall Winner
 
-Based on the evaluation results, Random Forest achieved the best overall performance.
+Based on the overall evaluation results, **Random Forest achieved the best overall performance**.
 
 It obtained:
 
-- Accuracy: 0.8120
-- AUC: 0.7506
-- Precision: 0.6325
-- Recall: 0.3580
-- F1 Score: 0.4572
-- MCC: 0.3749
+* Accuracy: 0.8120
+* AUC: 0.7506
+* Precision: 0.6325
+* Recall: 0.3580
+* F1 Score: 0.4572
+* MCC: 0.3749
 
 Random Forest achieved the highest Accuracy, AUC, and MCC among the evaluated models.
+
+However, Naive Bayes achieved the highest Recall and F1 Score, making it effective at identifying clients who are likely to default.
 
 ---
 
@@ -118,31 +120,86 @@ Random Forest achieved the highest Accuracy, AUC, and MCC among the evaluated mo
 
 The project includes a Streamlit application that allows users to:
 
-- Select a machine learning model
-- Upload a test CSV file
-- Generate predictions
-- View prediction results
-- View evaluation metrics
-- View the confusion matrix
+* Select a machine learning model
+* Upload a test CSV file
+* Generate predictions
+* View prediction results
+* View prediction probabilities
+* View evaluation metrics
+* View the confusion matrix
+* Compare the performance of different models
+
+### Live Application
+
+[Credit Card Default Prediction - Streamlit App](https://credit-card-default-prediction-bvwasikxhzqwnmel7f8tjh.streamlit.app/)
+
+---
+
+## GitHub Repository
+
+[Credit Card Default Prediction - GitHub Repository](https://github.com/nehataslimBITS/credit-card-default-prediction)
 
 ---
 
 ## Project Structure
 
 ```text
-2025Neha/
+credit-card-default-prediction/
 │
 ├── app.py
 ├── requirements.txt
 ├── README.md
 ├── test_data.csv
+├── ML_Assignment.ipynb
 │
-├── model/
-│   ├── logistic_regression.pkl
-│   ├── decision_tree.pkl
-│   ├── knn.pkl
-│   ├── naive_bayes.pkl
-│   ├── random_forest.pkl
-│   └── scaler.pkl
-│
-└── ML_Assignment.ipynb
+└── model/
+    ├── logistic_regression.pkl
+    ├── decision_tree.pkl
+    ├── knn.pkl
+    ├── naive_bayes.pkl
+    ├── random_forest.pkl
+    └── scaler.pkl
+```
+
+---
+
+## Requirements
+
+The application requires the following Python packages:
+
+* Streamlit
+* Pandas
+* NumPy
+* Scikit-learn
+* Joblib
+* Matplotlib
+* Seaborn
+
+The dependencies are listed in `requirements.txt`.
+
+---
+
+## How the Application Works
+
+1. The user selects one of the five trained machine learning models.
+2. The user uploads a CSV test dataset.
+3. The application validates the target column.
+4. The input features are separated from the target.
+5. The `ID` column is removed if present.
+6. Scaling is applied for Logistic Regression, kNN, and Naive Bayes.
+7. The selected model generates predictions and default probabilities.
+8. The application displays prediction results.
+9. Evaluation metrics are calculated using the actual target values.
+10. A confusion matrix is displayed for further evaluation.
+
+---
+
+## Conclusion
+
+The five machine learning classification models were successfully implemented, evaluated, and deployed through a Streamlit application.
+
+Among the evaluated models, **Random Forest provided the strongest overall performance**, achieving the highest Accuracy, AUC, and MCC.
+
+**Naive Bayes achieved the highest Recall and F1 Score**, showing better performance in identifying default cases.
+
+The final application provides an interactive interface for selecting models, uploading test data, generating predictions, and evaluating model performance.
